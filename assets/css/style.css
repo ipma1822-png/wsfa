@@ -738,3 +738,166 @@ button{ font:inherit; }
   .reveal{ transition:none; }
   .btn, .nav-link, .hub-card, .mini-link, .menu-btn{ transition:none; }
 }
+/* =========================================================
+   WSFA Premium Extensions (append-only)
+   ========================================================= */
+
+/* Toast */
+.toast{
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translate(-50%, 16px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(15,22,39,.86);
+  box-shadow: 0 18px 60px rgba(0,0,0,.45);
+  backdrop-filter: blur(12px);
+  color: rgba(234,240,255,.92);
+  font-size: 13px;
+  z-index: 2000;
+  transition: opacity .22s var(--ease), transform .22s var(--ease);
+}
+.toast.show{
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Code / Script Box */
+.codebox{
+  margin-top: 14px;
+  border-radius: var(--radius2);
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.20);
+  padding: 14px 14px;
+  color: rgba(234,240,255,.88);
+  line-height: 1.7;
+  overflow:auto;
+  box-shadow: var(--shadow2);
+}
+.codebox strong{ color: var(--gold2); }
+
+/* Search input */
+.input{
+  width: 100%;
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  outline: none;
+  box-shadow: var(--shadow2);
+}
+.input:focus{
+  border-color: rgba(116,192,255,.30);
+  background: rgba(255,255,255,.05);
+}
+
+/* Result card (verification) */
+.result-card{
+  margin-top: 14px;
+  border-radius: var(--radius2);
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.02);
+  padding: 16px 16px;
+  box-shadow: var(--shadow);
+}
+.result-card.good{ border-color: rgba(120,255,190,.18); background: rgba(120,255,190,.06); }
+.result-card.warn{ border-color: rgba(255,223,139,.18); background: rgba(255,223,139,.06); }
+.result-card.bad{ border-color: rgba(255,120,120,.18); background: rgba(255,120,120,.06); }
+
+.result-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom: 10px;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+}
+.pill.good{ background: rgba(120,255,190,.10); border-color: rgba(120,255,190,.20); }
+.pill.warn{ background: rgba(255,223,139,.12); border-color: rgba(255,223,139,.22); }
+.pill.bad{ background: rgba(255,120,120,.10); border-color: rgba(255,120,120,.22); }
+
+.kv{
+  display:grid;
+  gap:8px;
+  margin-top: 10px;
+}
+.kv-row{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding: 10px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.14);
+}
+.kv-row .k{
+  width: 84px;
+  color: rgba(234,240,255,.62);
+  font-size: 12px;
+  flex: 0 0 auto;
+}
+.kv-row .v{
+  color: rgba(234,240,255,.92);
+  word-break: break-word;
+  font-size: 13px;
+}
+.result-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top: 12px;
+}
+
+/* Resources download list */
+.dl-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+.dl-item{
+  border-radius: var(--radius2);
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.14);
+  padding: 16px 16px;
+  box-shadow: var(--shadow2);
+  transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+}
+.dl-item:hover{
+  transform: translateY(-2px);
+  border-color: rgba(116,192,255,.24);
+  background: rgba(0,0,0,.18);
+}
+.dl-item .tag{
+  display:inline-flex;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid rgba(74,163,255,.20);
+  background: rgba(74,163,255,.08);
+  color: rgba(234,240,255,.86);
+}
+.dl-item h3{ margin: 10px 0 0; font-size: 15px; }
+.dl-item p{ margin: 8px 0 0; color: var(--muted); line-height: 1.75; }
+.dl-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top: 12px;
+}
+
+@media (max-width: 980px){
+  .dl-grid{ grid-template-columns: 1fr; }
+}
