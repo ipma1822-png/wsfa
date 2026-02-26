@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0f19" />
+  <meta name="color-scheme" content="dark" />
+  <title>조회 서비스 | WSFA</title>
+  <meta name="description" content="WSFA 조회 서비스: 코드 입력으로 기록/인증 정보를 확인합니다." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="WSFA 조회 서비스" />
+  <meta property="og:description" content="코드 입력으로 기록/인증 정보를 확인합니다." />
+  <meta property="og:image" content="../assets/images/og.jpg" />
+  <meta property="og:url" content="./" />
+
+  <link rel="icon" href="../assets/images/logo.png" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">본문 바로가기</a>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="dot-live"></span>
+        <span class="topbar-text">WSFA Verification • Check & Trust</span>
+      </div>
+      <div class="topbar-right">
+        <a class="mini-link" href="../">홈</a>
+        <span class="sep">•</span>
+        <a class="mini-link" href="../safety-hub/">안전허브</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="../">
+        <img class="brand-logo" src="../assets/images/logo.png" alt="WSFA 로고" />
+        <div class="brand-text">
+          <strong class="brand-name">WSFA</strong>
+          <span class="brand-sub">조회 서비스</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a class="nav-link" href="../resources/">자료실</a>
+        <a class="nav-link" href="../news/">소식</a>
+        <a class="nav-link" href="../contact/">문의</a>
+        <a class="nav-link nav-cta" href="../safety-hub/">안전허브</a>
+      </nav>
+
+      <button class="menu-btn" type="button" aria-label="모바일 메뉴" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-icon"></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container mobile-menu-inner">
+        <a class="m-link" href="../resources/">자료실</a>
+        <a class="m-link" href="../news/">소식</a>
+        <a class="m-link strong" href="../safety-hub/">안전허브</a>
+        <div class="m-divider"></div>
+        <a class="m-link" href="../">WSFA 홈</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h1 class="h2">조회 서비스</h1>
+          <p class="muted">
+            코드로 기록을 확인합니다. <strong>대시(-), 공백</strong>은 자동으로 무시됩니다.  
+            예: <strong>WSFA-2026-0001</strong> 또는 <strong>wsfa20260001</strong> 모두 인식
+          </p>
+
+          <div class="hero-actions" style="margin-top:12px;">
+            <button class="btn ghost" type="button" data-qr-btn data-qr-url="./">조회 링크 복사</button>
+            <button class="btn ghost" type="button" data-share-btn data-share-url="./" data-share-text="WSFA 조회 서비스 링크">공유</button>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <h2 class="h3">코드 입력</h2>
+
+          <form id="verifyForm" style="margin-top:12px;">
+            <input id="verifyCode" class="input" name="code" autocomplete="off"
+              placeholder="예: WSFA-2026-0001" aria-label="조회 코드 입력" />
+            <div class="result-actions" style="margin-top:12px;">
+              <button class="btn primary" type="submit">조회하기</button>
+              <a class="btn ghost" href="../contact/">오류/정정 문의</a>
+            </div>
+          </form>
+
+          <div id="verifyResult" aria-live="polite"></div>
+        </div>
+
+        <div class="card reveal" style="margin-top:14px;">
+          <h2 class="h3">조회가 필요한 경우</h2>
+          <ul class="list">
+            <li>교육/캠페인 참여 기록 확인</li>
+            <li>발급된 카드/문서/자료의 코드 진위 확인</li>
+            <li>기관 제출용 확인(코드 일치 여부)</li>
+          </ul>
+          <p class="muted small" style="margin-top:10px;">
+            ※ 개인정보 보호를 위해 표시 항목은 최소화할 수 있습니다(원하시면 “표시 항목 정책”도 함께 설계해 드릴게요).
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="../">WSFA 홈</a>
+        <a href="../resources/">자료실</a>
+        <a href="../safety-hub/">안전허브</a>
+        <a href="../contact/">문의</a>
+      </div>
+      <div class="footer-meta">
+        <p class="muted small">© <span id="year"></span> WSFA</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Data must load BEFORE app.js uses it -->
+  <script src="./data/data.js"></script>
+  <script defer src="../assets/js/app.js"></script>
+</body>
+</html>
